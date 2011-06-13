@@ -1,4 +1,42 @@
 - content_for :head do
   %title Susanne Theisen – Freie Journalistin
 
+- content_for :javascripts do
+  :javascript
+    $(function() {
+      //JSON object for storing backgrounds and their dimensions easily accessible
+      var bgs = {"pagebg": [
+                  {"x": 1920, "y": 1400, "file": "start-bg-xl.jpg"},
+                  {"x": 1400, "y": 1200, "file": "start-bg-l.jpg"},
+                  {"x": 1200, "y": 1024, "file": "start-bg-m.jpg"},
+                  {"x": 1024, "y": 768, "file": "start-bg-s.jpg"},
+                  {"x": 768, "y": 576, "file": "start-bg-xs.jpg"}
+                ]
+      };
+    
+      //recalculate backgrounds on window resize events
+      $(window).resize(function() {
+        switch_background($('.full-bg'), bgs.pagebg);
+      });
+    
+      //fire resize event for initial choosing of appropriate background
+      $(window).resize();
+    });
+  
+    //switch background image for specified element with specified backgrounds data
+    function switch_background(element, data) {
+      var best_match = 0;
+      for(var i = 0; i < data.length; i++) {
+        if (window.innerWidth  <= data[i].x &&
+            window.innerHeight <= data[i].y) {
+          best_match = i;
+        } else {
+          break;
+        }
+      }
+      $(element).attr('src', '/images/backgrounds/'+data[best_match].file);
+    }
+
+
+%img.full-bg(src="/images/backgrounds/start-bg-xs.jpg")
 %h1 The Middleman is watching.
