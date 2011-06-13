@@ -13,9 +13,47 @@
  *cols    1     2      3      4      5      6      7      8      9      10      11
  *px      70    160    250    340    430    520    610    700    790    880     970
 
+html,
+body,
+  height: 100%
+#page
+  +min-height(100%)
+  +clearfix
+  font-size: $font-size * 0.875
+  line-height: 1.4em
+
+#main
+  z-index: 20
+  position: relative
+  margin: $gutter * 1.5
+  .mission-statement
+    width: 430px
+
+ul.meta
+  +horizontal-list
+  margin-top: $gutter
+  li
+    padding-right: $gutter * 0.5
+  a
+    color: mix($font-color, $page-bg, 50%)
+    
+ul.vcard
+  width: 100%
+  li
+    margin-bottom: $gutter/5
+    +clearfix
+    &.country-name,
+    &.off
+      display: none
+  ul.adr
+    +float-left
+    width: 40%
+    li
+      margin: 0
 
 
-/*    Widescreen Layout: 1260px.
+
+/*    Widescreen Layout: 1200px.
  *    Gutters: 20px.
  *    Outer margins: 10px.
  *    Inherits styles from: Default Layout.
@@ -24,6 +62,16 @@
  *px      70    160    250    340    430    520    610    700    790    880     970     1060    1150    1240
 
 @media only screen and (min-width: 1260px)
+  html,
+  body,
+  #page
+    font-size: $font-size * 1
+    line-height: 1.4em
+
+  #main
+    margin: $gutter * 2
+    .mission-statement
+      width: 490px
 
 
 
@@ -35,8 +83,18 @@
  *cols    1     2      3      4      5      6      7      8
  *px      68    160    252    344    436    528    620    712
 
-@media only screen and (min-width: 768px) and (max-width: 989px)
+@media only screen and (min-width: 768px) and (max-width: 1023px)
 
+  #main
+    margin: $gutter * 1.5 $gutter * 1.25
+    h1
+      padding: 0 $gutter/4
+    .mission-statement
+      width: 430px
+      padding: $gutter/4
+      background: url(/images/backgrounds/box-background.png)
+      background: rgba($page-bg, 0.75)
+      margin-top: - $gutter/4
 
 
 /*    Mobile Layout: 320px.
@@ -48,6 +106,16 @@
  *px      68    160    252
 
 @media only screen and (max-width: 767px)
+
+  #main
+    h1
+      padding: 0 $gutter/4
+    .mission-statement
+      width: 100%
+      padding: $gutter/4
+      background: url(/images/backgrounds/box-background.png)
+      background: rgba($page-bg, 0.75)
+      margin-top: - $gutter/4
 
 
 
@@ -61,6 +129,16 @@
 
 @media only screen and (min-width: 480px) and (max-width: 767px)
 
+  #main
+    margin: $gutter * 1.5 $gutter * 1.25
+    h1
+      padding: 0 $gutter/4
+    .mission-statement
+      width: 430px
+      padding: $gutter/4
+      background: url(/images/backgrounds/box-background.png)
+      background: rgba($page-bg, 0.75)
+      margin-top: - $gutter/4
 
 
 /*  Retina media query.

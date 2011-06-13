@@ -1,42 +1,55 @@
+- @page_background = 'background-image: url(/images/backgrounds/1.jpg)'
+
 - content_for :head do
   %title Susanne Theisen – Freie Journalistin
 
-- content_for :javascripts do
-  :javascript
-    $(function() {
-      //JSON object for storing backgrounds and their dimensions easily accessible
-      var bgs = {"pagebg": [
-                  {"x": 1920, "y": 1400, "file": "start-bg-xl.jpg"},
-                  {"x": 1400, "y": 1200, "file": "start-bg-l.jpg"},
-                  {"x": 1200, "y": 1024, "file": "start-bg-m.jpg"},
-                  {"x": 1024, "y": 768, "file": "start-bg-s.jpg"},
-                  {"x": 768, "y": 576, "file": "start-bg-xs.jpg"}
-                ]
-      };
-    
-      //recalculate backgrounds on window resize events
-      $(window).resize(function() {
-        switch_background($('.full-bg'), bgs.pagebg);
-      });
-    
-      //fire resize event for initial choosing of appropriate background
-      $(window).resize();
-    });
+%h1 Susanne Theisen
+
+.mission-statement
+
+  %p.intro Ich bin freie Journalistin in Köln und Berlin. Gründliche Recherche ist meine Stärke, das Erzählen von Geschichten meine Leidenschaft – in Wort und Bild. 
+
+  %p Über meine Schwerpunkte Gesellschaft, Soziales, Kultur und Internet veröffentliche ich Reportagen, Features, Interviews, Porträts, Berichte und Nachrichten, unter anderem für den Deutschlandfunk, das Stadtmagazin PRINZ, die VIVA Fernsehen GmbH, den Kölner Stadtanzeiger, die Zahnärztlichen Mitteilungen, den Internetsender Bunch TV und das Modemagazin JNC.
+
+  %p Sie suchen professionelle Unterstützung für die Öffentlichkeitsarbeit oder die Umsetzung Ihres Corporate Publishing-Projekts? Ich liefere Pressemitteilungen, Broschüren und Texte für Ihr Mitarbeiter- oder Kundenmagazin.
   
-    //switch background image for specified element with specified backgrounds data
-    function switch_background(element, data) {
-      var best_match = 0;
-      for(var i = 0; i < data.length; i++) {
-        if (window.innerWidth  <= data[i].x &&
-            window.innerHeight <= data[i].y) {
-          best_match = i;
-        } else {
-          break;
-        }
-      }
-      $(element).attr('src', '/images/backgrounds/'+data[best_match].file);
-    }
+  %h3 Kontakt
+
+  %ul#hcard-Susanne-Theisen.vcard
+    %li.fn.off Susanne Theisen
+    %li
+      %ul.adr
+        %li.street-address Flughafenstraße 11
+        %li
+          %span.postal-code 12053
+          %span.locality Berlin
+        %li.country-name Germany
+      %ul.adr
+        %li.street-address Moltkestraße 66
+        %li
+          %span.postal-code 50674
+          %span.locality Köln
+        %li.country-name Germany
+    %li.communication
+      %ul
+        %li.tel
+          %span.value (+49) 177/652 73 74
+        %li
+          %a.email{:href => "mailto:info@susanne-theisen.de", :title => "Senden Sie mir eine E-Mail"} info@susanne-theisen.de
+    -#%li.download
+      %a{:href => "http://feeds.technorati.com/contacts/http://susanne-theisen.de/"} vCard downloaden
 
 
-%img.full-bg(src="/images/backgrounds/start-bg-xs.jpg")
-%h1 The Middleman is watching.
+  %h3 Meine Blogs
+  %ul
+    %li
+      %a(href="http://running-up-that-hill-lll.blogspot.com/" title="Besuchen Sie meinen Fotoblog" target="_blank")→ Running Up That Hill
+    %li
+      %a(href="http://sutheisen.posterous.com/" target="_blank")→ Blogschrift (mit Arbeitsproben)
+
+  %ul.meta
+    %li
+      %a(href="http://twitter.com/sutheisen" target="_blank")Twitter
+    %li
+      %a(href="http://www.xing.com/profile/Susanne_Theisen4" target="_blank")XING
+

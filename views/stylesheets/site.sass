@@ -35,23 +35,11 @@ img
   -ms-interpolation-mode: bicubic /* IE */
 
 
-// Common styling.
-
-a:link,
-a:visited
-  text-decoration: none
-  cursor: pointer
-
-a:hover,
-a:active
-  text-decoration: underline
-
-
 // Fully cover boxes with background-images
 
-.full-box-bg
+.full-box-bg, #page
   background-repeat: no-repeat
-  background-position: center center
+  background-position: bottom center
   +background-size(cover)
 
 // Fullscreen background image
@@ -59,7 +47,7 @@ a:active
 img.full-bg
   // Set rules to fill background
   min-height: 100%
-  min-width: 1024px
+  min-width: 786px
   // ^ original width of image (if scaling below 100% isnt wanted)
   // Set up proportionate scaling
   width: 100%
@@ -68,9 +56,10 @@ img.full-bg
   position: fixed
   top: 0
   left: 0
+  z-index: 1
 
-@media screen and (max-width: 1024px) 
+@media screen and (max-width: 768px) 
   // ^ Specific to this particular image size
   img.full-bg
     left: 50%
-    margin-left: -512px // 50% of image width
+    margin-left: -384px // 50% of image width

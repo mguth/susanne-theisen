@@ -8,6 +8,7 @@ GEM
       sass (~> 3.1)
     fssm (0.2.7)
     haml (3.1.1)
+    hpricot (0.8.4)
     sass (3.1.2)
 
 PLATFORMS
@@ -16,3 +17,4 @@ PLATFORMS
 DEPENDENCIES
   compass (>= 0.11.3)
   haml (~> 3.1.1)
+  hpricot
