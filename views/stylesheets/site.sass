@@ -1,0 +1,76 @@
+/* Stylesheet for Susanne-Theisen.de */
+
+// Import constants & sprites
+
+@import partials/constants
+//@import partials/sprites
+
+
+// Compass imports & mixins.
+
+@import compass/reset
+@import compass/layout
+@import compass
+
+
+// Import mixins, layout & typography
+
+@import partials/mixins
+@import partials/layout
+@import partials/typography
+
+
+// Import other site partials
+
+@import partials/forms
+
+
+// To prevent the centered page from jumping around, always show the vertical scroll bar.
+
+html
+  overflow-y: scroll
+
+img
+  image-rendering: optimizeQuality /* Gecko */
+  -ms-interpolation-mode: bicubic /* IE */
+
+
+// Common styling.
+
+a:link,
+a:visited
+  text-decoration: none
+  cursor: pointer
+
+a:hover,
+a:active
+  text-decoration: underline
+
+
+// Fully cover boxes with background-images
+
+.full-box-bg
+  background-repeat: no-repeat
+  background-position: center center
+  +background-size(cover)
+
+// Fullscreen background image
+
+img.full-bg
+  // Set rules to fill background
+  min-height: 100%
+  min-width: 1024px
+  // ^ original width of image (if scaling below 100% isnt wanted)
+  // Set up proportionate scaling
+  width: 100%
+  height: auto
+  // Set up positioning
+  position: fixed
+  top: 0
+  left: 0
+
+@media screen and (max-width: 1024px) 
+  // ^ Specific to this particular image size
+  img.full-bg
+    left: 50%
+    margin-left: -512px // 50% of image width

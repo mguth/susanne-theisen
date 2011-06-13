@@ -1,0 +1,16 @@
+-# Grab Google CDN's jQuery
+= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"
+
+-# fall back to local jQuery if necessary
+:javascript
+  !window.jQuery && document.write('#{ js_escape_html(javascript_include_tag "jquery.min") }')
+
+/[if lte IE 8]
+  = javascript_include_tag 'css3-mediaqueries'
+
+-#= javascript_include_tag 'toolbox.expose.min'
+
+:javascript
+
+-#  Append your own using content_for :javascripts
+= yield_content :javascripts

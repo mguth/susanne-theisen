@@ -1,0 +1,74 @@
+/*  Less Framework 4
+ *  http://lessframework.com
+ *  by Joni Korpi
+ *  License: http://creativecommons.org/licenses/MIT/
+
+
+
+/*    Default Layout: 990px. 
+ *    Gutters: 20px.
+ *    Outer margins: 10px.
+ *    Leftover space for scrollbars @1024px: 34px.
+ *------------------------------------------------------------------------------------
+ *cols    1     2      3      4      5      6      7      8      9      10      11
+ *px      70    160    250    340    430    520    610    700    790    880     970
+
+
+
+/*    Widescreen Layout: 1260px.
+ *    Gutters: 20px.
+ *    Outer margins: 10px.
+ *    Inherits styles from: Default Layout.
+ *------------------------------------------------------------------------------------------------------------
+ *cols    1     2      3      4      5      6      7      8      9      10      11      12      13      14
+ *px      70    160    250    340    430    520    610    700    790    880     970     1060    1150    1240
+
+@media only screen and (min-width: 1260px)
+
+
+
+/*    Tablet Layout: 768px.
+ *    Gutters: 24px.
+ *    Outer margins: 28px.
+ *    Inherits styles from: Default Layout.
+ *-----------------------------------------------------------------
+ *cols    1     2      3      4      5      6      7      8
+ *px      68    160    252    344    436    528    620    712
+
+@media only screen and (min-width: 768px) and (max-width: 989px)
+
+
+
+/*    Mobile Layout: 320px.
+ *    Gutters: 24px.
+ *    Outer margins: 34px.
+ *    Inherits styles from: Default Layout.
+ *---------------------------------------------
+ *cols    1     2      3
+ *px      68    160    252
+
+@media only screen and (max-width: 767px)
+
+
+
+/*    Wide Mobile Layout: 480px.
+ *    Gutters: 24px.
+ *    Outer margins: 22px.
+ *    Inherits styles from: Default Layout, Mobile Layout.
+ *------------------------------------------------------------
+ *cols    1     2      3      4      5
+ *px      68    160    252    344    436
+
+@media only screen and (min-width: 480px) and (max-width: 767px)
+
+
+
+/*  Retina media query.
+ *  Overrides styles for devices with a 
+ *  device-pixel-ratio of 2+, such as iPhone 4.
+ *-----------------------------------------------
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+@media only screen and (min-device-pixel-ratio: 2)
+
+

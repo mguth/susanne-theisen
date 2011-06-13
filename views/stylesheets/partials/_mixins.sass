@@ -1,0 +1,54 @@
+/* Custom mixins are defined here, for things we can't use Compass for. */
+
+
+// Generate a button based on a background image (in a sprite), hiding the text.
+@mixin image-button($width, $height, $glob, $filename)
+  width: $width
+  height: $height
+  //padding-top: $height
+  background: sprite($glob, $filename) no-repeat !important
+  border: 0
+  display: inline-block
+  +hide-text
+
+
+// Display multiple background images (with fallback color and image)
+@mixin espi-multi-background($fallback-color, $background-1, $background-2: false, $background-3: false, $background-4: false, $background-5: false, $background-6: false, $background-7: false, $background-8: false, $background-9: false, $background-10: false)
+  $simple-background: $background-1
+  @if not blank($simple-background)
+    background: $fallback-color $simple-background
+  @include background($background-1, $background-2, $background-3, $background-4, $background-5, $background-6, $background-7, $background-8, $background-9, $background-10)
+
+
+// Include PIE.htc for CSS3 features in IE. Path should be relative from HTML, not CSS.
+@mixin pie
+  behavior: url("/javascripts/PIE.htc")
+  
+
+// some css transitions
+@mixin espi-ease($property)
+  -webkit-transition: $property 0.3s ease-in-out
+  -moz-transition: $property 0.3s ease-in-out
+  -o-transition: $property 0.3s ease-in-out
+  transition: $property 0.3s ease-in-out
+
+
+// General type stuff
+
+@mixin caption-regular
+  font-family: 'Egyptienne', 'Arial Black', sans-serif
+  font-weight: bold
+  -webkit-font-smoothing: antialiased
+
+@mixin caption-italic
+  font-family: 'Egyptienne', 'Arial Black', sans-serif
+  font-weight: bold
+  font-style: italic
+  -webkit-font-smoothing: antialiased
+
+@mixin text-bold
+  font-weight: bold
+  -webkit-font-smoothing: antialiased
+
+//@mixin text-regular
+  font-weight: normal
