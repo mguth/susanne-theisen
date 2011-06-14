@@ -4,4 +4,4 @@ source :rubygems
 gem 'haml',                 '~> 3.1.1'
 
 # SASS for stylesheet creation
-gem 'compass',              '>= 0.11.3'
+gem 'compass',              '~> 0.11.3'

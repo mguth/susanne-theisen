@@ -1,0 +1,358 @@
+/* Stylesheet for Susanne-Theisen.de */
+/* Re-usable constants are defined here, such as colors and fonts. */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1; }
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 101, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 115, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* Custom mixins are defined here, for things we can't use Compass for. */
+/*  Less Framework 4
+ *  http://lessframework.com
+ *  by Joni Korpi
+ *  License: http://creativecommons.org/licenses/MIT/ */
+/*    Default Layout: 990px.
+ *    Gutters: 20px.
+ *    Outer margins: 10px.
+ *    Leftover space for scrollbars @1024px: 34px.
+ *------------------------------------------------------------------------------------
+ *cols    1     2      3      4      5      6      7      8      9      10      11
+ *px      70    160    250    340    430    520    610    700    790    880     970 */
+/* line 16, ../../views/stylesheets/partials/_layout.sass */
+html,
+body {
+  height: 100%; }
+
+/* line 19, ../../views/stylesheets/partials/_layout.sass */
+#page {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  overflow: hidden;
+  *zoom: 1;
+  font-size: 14px;
+  line-height: 1.4em; }
+
+/* line 25, ../../views/stylesheets/partials/_layout.sass */
+#main {
+  z-index: 20;
+  position: relative;
+  margin: 30px; }
+  /* line 29, ../../views/stylesheets/partials/_layout.sass */
+  #main .mission-statement {
+    width: 430px; }
+
+/* line 32, ../../views/stylesheets/partials/_layout.sass */
+ul.meta {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  margin-top: 20px; }
+  /* line 60, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  ul.meta li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0px;
+    white-space: nowrap;
+    display: inline;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px; }
+    /* line 48, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+    ul.meta li:first-child, ul.meta li.first {
+      padding-left: 0; }
+    /* line 49, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+    ul.meta li:last-child {
+      padding-right: 0; }
+    /* line 50, ../../../../../.rvm/gems/ruby-1.9.2-p180@middleman/gems/compass-0.11.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+    ul.meta li.last {
+      padding-right: 0; }
+  /* line 35, ../../views/stylesheets/partials/_layout.sass */
+  ul.meta li {
+    padding-right: 10px; }
+  /* line 37, ../../views/stylesheets/partials/_layout.sass */
+  ul.meta a {
+    color: #757471; }
+
+/* line 40, ../../views/stylesheets/partials/_layout.sass */
+ul.vcard {
+  width: 100%; }
+  /* line 42, ../../views/stylesheets/partials/_layout.sass */
+  ul.vcard li {
+    margin-bottom: 4px;
+    overflow: hidden;
+    *zoom: 1; }
+    /* line 45, ../../views/stylesheets/partials/_layout.sass */
+    ul.vcard li.country-name, ul.vcard li.off {
+      display: none; }
+  /* line 48, ../../views/stylesheets/partials/_layout.sass */
+  ul.vcard ul.adr {
+    display: inline;
+    float: left;
+    width: 40%; }
+    /* line 51, ../../views/stylesheets/partials/_layout.sass */
+    ul.vcard ul.adr li {
+      margin: 0; }
+
+/*    Widescreen Layout: 1200px.
+ *    Gutters: 20px.
+ *    Outer margins: 10px.
+ *    Inherits styles from: Default Layout.
+ *------------------------------------------------------------------------------------------------------------
+ *cols    1     2      3      4      5      6      7      8      9      10      11      12      13      14
+ *px      70    160    250    340    430    520    610    700    790    880     970     1060    1150    1240 */
+@media only screen and (min-width: 1260px) {
+  /* line 65, ../../views/stylesheets/partials/_layout.sass */
+  html,
+  body,
+  #page {
+    font-size: 16px;
+    line-height: 1.4em; }
+
+  /* line 71, ../../views/stylesheets/partials/_layout.sass */
+  #main {
+    margin: 40px; }
+    /* line 73, ../../views/stylesheets/partials/_layout.sass */
+    #main .mission-statement {
+      width: 490px; } }
+/*    Tablet Layout: 768px.
+ *    Gutters: 24px.
+ *    Outer margins: 28px.
+ *    Inherits styles from: Default Layout.
+ *-----------------------------------------------------------------
+ *cols    1     2      3      4      5      6      7      8
+ *px      68    160    252    344    436    528    620    712 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* line 88, ../../views/stylesheets/partials/_layout.sass */
+  #main {
+    margin: 30px 25px; }
+    /* line 90, ../../views/stylesheets/partials/_layout.sass */
+    #main h1 {
+      padding: 0 5px; }
+    /* line 92, ../../views/stylesheets/partials/_layout.sass */
+    #main .mission-statement {
+      width: 430px;
+      padding: 5px;
+      background: url(/images/backgrounds/box-background.png);
+      background: rgba(235, 233, 227, 0.75);
+      margin-top: -5px; } }
+/*    Mobile Layout: 320px.
+ *    Gutters: 24px.
+ *    Outer margins: 34px.
+ *    Inherits styles from: Default Layout.
+ *---------------------------------------------
+ *cols    1     2      3
+ *px      68    160    252 */
+@media only screen and (max-width: 767px) {
+  /* line 111, ../../views/stylesheets/partials/_layout.sass */
+  #main h1 {
+    padding: 0 5px; }
+  /* line 113, ../../views/stylesheets/partials/_layout.sass */
+  #main .mission-statement {
+    width: 100%;
+    padding: 5px;
+    background: url(/images/backgrounds/box-background.png);
+    background: rgba(235, 233, 227, 0.75);
+    margin-top: -5px; } }
+/*    Wide Mobile Layout: 480px.
+ *    Gutters: 24px.
+ *    Outer margins: 22px.
+ *    Inherits styles from: Default Layout, Mobile Layout.
+ *------------------------------------------------------------
+ *cols    1     2      3      4      5
+ *px      68    160    252    344    436 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 132, ../../views/stylesheets/partials/_layout.sass */
+  #main {
+    margin: 30px 25px; }
+    /* line 134, ../../views/stylesheets/partials/_layout.sass */
+    #main h1 {
+      padding: 0 5px; }
+    /* line 136, ../../views/stylesheets/partials/_layout.sass */
+    #main .mission-statement {
+      width: 430px;
+      padding: 5px;
+      background: url(/images/backgrounds/box-background.png);
+      background: rgba(235, 233, 227, 0.75);
+      margin-top: -5px; } }
+/*  Retina media query.
+ *  Overrides styles for devices with a 
+ *  device-pixel-ratio of 2+, such as iPhone 4.
+ *----------------------------------------------- */
+/* Typography */
+/*@font-face
+ * font-family: 'Egyptienne'
+ * font-weight: bold
+ * src: url('/fonts/e046016t.eot')
+ * // IE9 Compat Modes
+ * src: url('/fonts/e046016t.eot?iefix') format('eot'), url('/fonts/e046016t-webfont.woff') format('woff'), url('/fonts/e046016t.ttf') format('truetype'), url('/fonts/e046016t-webfont.svg#svgFontName') format('svg')
+ * // Order of appearance: 1. IE6-IE8 - 2. Modern Browsers - 3. Safari, Android, iOS - 4. Legacy iOS */
+/*@font-face
+ * font-family: 'Egyptienne'
+ * font-weight: bold
+ * font-style: italic
+ * src: url('/fonts/e046236t.eot')
+ * // IE9 Compat Modes
+ * src: url('/fonts/e046236t.eot?iefix') format('eot'), url('/fonts/e046236t-webfont.woff') format('woff'), url('/fonts/e046236t.ttf') format('truetype'), url('/fonts/e046236t-webfont.svg#svgFontName') format('svg')
+ * // Order of appearance: 1. IE6-IE8 - 2. Modern Browsers - 3. Safari, Android, iOS - 4. Legacy iOS */
+/*@font-face
+ * font-family: 'Egyptienne'
+ * font-weight: normal
+ * src: url('/fonts/egyptienneurw-lig-webfont.eot')
+ * // IE9 Compat Modes
+ * src: url('/fonts/egyptienneurw-lig-webfont.eot?iefix') format('eot'), url('/fonts/egyptienneurw-lig-webfont.woff') format('woff'), url('/fonts/egyptienneurw-lig-webfont.ttf') format('truetype'), url('/fonts/egyptienneurw-lig-webfont.svg#svgFontName') format('svg')
+ * // Order of appearance: 1. IE6-IE8 - 2. Modern Browsers - 3. Safari, Android, iOS - 4. Legacy iOS */
+/* line 31, ../../views/stylesheets/partials/_typography.sass */
+body {
+  font-size: 16px;
+  line-height: 1.4em;
+  color: black;
+  font-family: "proxima-nova-1", "proxima-nova-2", Helmet, Freesans, sans-serif;
+  font-weight: 300;
+  text-shadow: #ebe9e3 1px 1px 1px;
+  -webkit-text-size-adjust: 100%; }
+
+/* line 44, ../../views/stylesheets/partials/_typography.sass */
+h1, h2, h3, h4 {
+  font-family: "proxima-nova-1", "proxima-nova-2", Helmet, Freesans, sans-serif; }
+
+/* line 47, ../../views/stylesheets/partials/_typography.sass */
+h1 {
+  font-size: 3em;
+  line-height: 1.12em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  font-weight: 100; }
+
+/* line 53, ../../views/stylesheets/partials/_typography.sass */
+h2 {
+  font-size: 1.846em;
+  line-height: 1.12em; }
+
+/* line 56, ../../views/stylesheets/partials/_typography.sass */
+h3 {
+  font-size: 1em;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4em;
+  margin-top: 1em; }
+
+/* line 61, ../../views/stylesheets/partials/_typography.sass */
+h4 {
+  font-size: 1.077em;
+  line-height: 1.4em; }
+
+/* line 67, ../../views/stylesheets/partials/_typography.sass */
+a:link,
+a:visited {
+  color: #ff6600;
+  text-decoration: none;
+  cursor: pointer; }
+
+/* line 73, ../../views/stylesheets/partials/_typography.sass */
+a:hover,
+a:active {
+  color: #ff6600;
+  text-decoration: underline; }
+
+/* line 81, ../../views/stylesheets/partials/_typography.sass */
+p {
+  margin-bottom: 0.75em; }
+  /* line 85, ../../views/stylesheets/partials/_typography.sass */
+  p.intro {
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased; }
+
+/* line 88, ../../views/stylesheets/partials/_typography.sass */
+.strong,
+strong {
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased; }
+
+/* line 30, ../../views/stylesheets/site.css.sass */
+html {
+  overflow-y: scroll; }
+
+/* line 33, ../../views/stylesheets/site.css.sass */
+img {
+  image-rendering: optimizeQuality;
+  -ms-interpolation-mode: bicubic; }
+
+/* line 40, ../../views/stylesheets/site.css.sass */
+.full-box-bg, #page {
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+/* line 47, ../../views/stylesheets/site.css.sass */
+img.full-bg {
+  min-height: 100%;
+  min-width: 786px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+
+@media screen and (max-width: 768px) {
+  /* line 63, ../../views/stylesheets/site.css.sass */
+  img.full-bg {
+    left: 50%;
+    margin-left: -384px; } }
