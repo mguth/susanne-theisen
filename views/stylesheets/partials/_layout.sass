@@ -16,11 +16,21 @@
 html,
 body,
   height: 100%
+
+body
+  +single-text-shadow($page-bg, 1px, 1px, 1px)
+
 #page
   +min-height(100%)
   +clearfix
   font-size: $font-size * 0.875
   line-height: 1.4em
+
+// Fully cover elements with background-images
+.full-box-bg, #page
+  background-repeat: no-repeat
+  background-position: bottom center
+  +background-size(cover)
 
 #main
   z-index: 20
@@ -51,7 +61,9 @@ ul.vcard
     li
       margin: 0
 
-
+img.portrait
+  width: 100%
+  display: none
 
 /*    Widescreen Layout: 1200px.
  *    Gutters: 20px.
@@ -83,7 +95,10 @@ ul.vcard
  *cols    1     2      3      4      5      6      7      8
  *px      68    160    252    344    436    528    620    712
 
-@media only screen and (min-width: 768px) and (max-width: 1023px)
+@media only screen and (min-width: 768px) and (max-width: 990px)
+
+  body
+    +single-text-shadow($page-bg, 1px, 1px, 1px)
 
   #main
     margin: $gutter * 1.5 $gutter * 1.25
@@ -105,19 +120,34 @@ ul.vcard
  *cols    1     2      3
  *px      68    160    252
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width: 600px)
+
+  body
+    +single-text-shadow(#fff, 0, 1px, 1px)
 
   #main
+    margin: 0
     h1
-      padding: 0 $gutter/4
+      padding: $gutter * 1.5 $gutter * 1.25 $gutter * 1.5 $gutter * 1.5
+      margin: 0
+            
     .mission-statement
-      width: 100%
-      padding: $gutter/4
+      margin: $gutter * 1.5 $gutter * 1.25 $gutter * 1.5 $gutter * 1.5
+      width: auto
+      padding: 0
       background: url(/images/backgrounds/box-background.png)
       background: rgba($page-bg, 0.75)
       margin-top: - $gutter/4
 
-
+  img.portrait
+    display: block
+    
+  .full-box-bg, #page
+    background: none !important
+    
+  ul.vcard
+    ul.adr
+      width: 50%
 
 /*    Wide Mobile Layout: 480px.
  *    Gutters: 24px.
@@ -127,7 +157,10 @@ ul.vcard
  *cols    1     2      3      4      5
  *px      68    160    252    344    436
 
-@media only screen and (min-width: 480px) and (max-width: 767px)
+@media only screen and (min-width: 601px) and (max-width: 767px)
+
+  body
+    +single-text-shadow($page-bg, 1px, 1px, 1px)
 
   #main
     margin: $gutter * 1.5 $gutter * 1.25

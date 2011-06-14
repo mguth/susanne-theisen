@@ -4,8 +4,8 @@
     <meta charset='utf-8' />
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
-    <meta description='' />
     <meta content='width=device-width; initial-scale=1.0' name='viewport' />
+    <meta description='' />
     <title>Susanne Theisen – Freie Journalistin</title>
     <link href="/stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://use.typekit.com/xud6jax.js"></script>
@@ -19,9 +19,10 @@
     <![endif]-->
   </head>
   <body class='index'>
-    <div id='page' style='background-image: url(/images/backgrounds/1.jpg)'>
+    <div id='page' style='background-image: url(/images/backgrounds/portrait-xs.jpg)'>
       <header></header>
       <div id='main' role='main'>
+        <img alt='Susanne Theisen' class='portrait' src='/images/backgrounds/portrait-xs.jpg' />
         <h1>Susanne Theisen</h1>
         <div class='mission-statement'>
           <p class='intro'>Ich bin freie Journalistin in Köln und Berlin. Gründliche Recherche ist meine Stärke, das Erzählen von Geschichten meine Leidenschaft – in Wort und Bild.</p>
@@ -95,6 +96,42 @@
         
       //]]>
     </script>
-    
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(function() {
+          //JSON object for storing backgrounds and their dimensions easily accessible
+          var bgs = {"page_bg": [
+                      {"x": 1920, "y": 1440, "file": "portrait-xl.jpg"},
+                      {"x": 1440, "y": 1080, "file": "portrait-l.jpg"},
+                      {"x": 1280, "y": 960, "file": "portrait-m.jpg"},
+                      {"x": 1024, "y": 768, "file": "portrait-s.jpg"},
+                      {"x": 600, "y": 450, "file": "portrait-xs.jpg"}
+                    ] 
+          };
+        
+          //recalculate backgrounds on window resize events
+          $(window).resize(function() {
+            switch_background($('#page'), bgs.page_bg);
+          });
+        
+          //fire resize event for initial choosing of appropriate background
+          $(window).resize();
+        });
+        
+        //switch background image for specified element with specified backgrounds data
+        function switch_background(element, data) {
+          var best_match = 0;
+          for(var i = 0; i < data.length; i++) {
+            if ($(element).width()  <= data[i].x &&
+                $(element).height() <= data[i].y) {
+              best_match = i;
+            } else {
+              break;
+            }
+          }
+          $(element).css('background-image', 'url(/images/backgrounds/'+data[best_match].file+')');
+        }
+      //]]>
+    </script>
   </body>
 </html>

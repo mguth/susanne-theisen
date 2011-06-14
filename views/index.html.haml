@@ -1,7 +1,46 @@
-- @page_background = 'background-image: url(/images/backgrounds/1.jpg)'
+- @page_background = 'background-image: url(/images/backgrounds/portrait-xs.jpg)'
 
 - content_for :head do
   %title Susanne Theisen – Freie Journalistin
+
+- content_for :javascripts do
+
+  :javascript
+    $(function() {
+      //JSON object for storing backgrounds and their dimensions easily accessible
+      var bgs = {"page_bg": [
+                  {"x": 1920, "y": 1440, "file": "portrait-xl.jpg"},
+                  {"x": 1440, "y": 1080, "file": "portrait-l.jpg"},
+                  {"x": 1280, "y": 960, "file": "portrait-m.jpg"},
+                  {"x": 1024, "y": 768, "file": "portrait-s.jpg"},
+                  {"x": 600, "y": 450, "file": "portrait-xs.jpg"}
+                ] 
+      };
+    
+      //recalculate backgrounds on window resize events
+      $(window).resize(function() {
+        switch_background($('#page'), bgs.page_bg);
+      });
+    
+      //fire resize event for initial choosing of appropriate background
+      $(window).resize();
+    });
+  
+    //switch background image for specified element with specified backgrounds data
+    function switch_background(element, data) {
+      var best_match = 0;
+      for(var i = 0; i < data.length; i++) {
+        if ($(element).width()  <= data[i].x &&
+            $(element).height() <= data[i].y) {
+          best_match = i;
+        } else {
+          break;
+        }
+      }
+      $(element).css('background-image', 'url(/images/backgrounds/'+data[best_match].file+')');
+    }
+
+%img.portrait(src="/images/backgrounds/portrait-xs.jpg" alt="Susanne Theisen")
 
 %h1 Susanne Theisen
 
