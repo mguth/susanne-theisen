@@ -1,7 +1,3 @@
-source :rubygems
+source "http://rubygems.org"
 
-# HAML as template engine
-gem 'haml',                 '~> 3.1.1'
-
-# SASS for stylesheet creation
-gem 'compass',              '~> 0.11.3'
+gem "middleman", "~>2.0.13"
