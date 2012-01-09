@@ -14,18 +14,18 @@
                   {"x": 1280, "y": 960, "file": "portrait-m.jpg"},
                   {"x": 1024, "y": 768, "file": "portrait-s.jpg"},
                   {"x": 600, "y": 450, "file": "portrait-xs.jpg"}
-                ] 
+                ]
       };
-    
+
       //recalculate backgrounds on window resize events
       $(window).resize(function() {
         switch_background($('#page'), bgs.page_bg);
       });
-    
+
       //fire resize event for initial choosing of appropriate background
       $(window).resize();
     });
-  
+
     //switch background image for specified element with specified backgrounds data
     function switch_background(element, data) {
       var best_match = 0;
@@ -46,7 +46,7 @@
 
 .mission-statement
 
-  %p.intro Ich bin freie Journalistin in Köln und Berlin. Gründliche Recherche ist meine Stärke, das Erzählen von Geschichten meine Leidenschaft – in Wort und Bild. 
+  %p.intro Ich bin freie Journalistin in Berlin. Gründliche Recherche ist meine Stärke, das Erzählen von Geschichten meine Leidenschaft – in Wort und Bild.
 
   %p Über meine Schwerpunkte Gesellschaft, Soziales, Kultur und Internet veröffentliche ich Reportagen, Features, Interviews, Porträts, Berichte und Nachrichten. Zu meinen Kunden gehören der Deutschlandfunk, das Stadtmagazin PRINZ, die VIVA Fernsehen GmbH, der Kölner Stadt-Anzeiger, die Zahnärztlichen Mitteilungen und der Internetsender Bunch TV.
 
@@ -54,7 +54,7 @@
     Sie suchen professionelle Unterstützung für die Öffentlichkeitsarbeit oder die Umsetzung Ihres Corporate Publishing-Projekts?
     %br
     Ich liefere Pressemitteilungen, Broschüren und Texte für Ihr Mitarbeiter- oder Kundenmagazin.
-  
+
   %h3 Kontakt
 
   %ul#hcard-Susanne-Theisen.vcard
@@ -66,12 +66,6 @@
           %span.postal-code 12053
           %span.locality Berlin
         %li.country-name Germany
-      %ul.adr
-        %li.street-address Moltkestraße 66
-        %li
-          %span.postal-code 50674
-          %span.locality Köln
-        %li.country-name Germany
     %li.communication
       %ul
         %li.tel
@@ -82,9 +76,9 @@
       %a{:href => "http://feeds.technorati.com/contacts/http://susanne-theisen.de/"} vCard downloaden
 
 
-  %h3 Meine Blogs
+  %h3 Mein Blog
   %ul
-    %li
+    -#%li
       %a(href="http://running-up-that-hill-lll.blogspot.com/" title="Besuchen Sie meinen Fotoblog" target="_blank")→ Running Up That Hill
     %li
       %a(href="http://sutheisen.posterous.com/" target="_blank")→ suBlog (mit Arbeitsproben)
