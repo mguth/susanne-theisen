@@ -1,4 +1,4 @@
-rvm ruby-1.9.2@susanne-theisen --create
+rvm ruby-1.9.3@susanne-theisen --create
 if ! command -v bundle ; then
   gem install bundler
 fi

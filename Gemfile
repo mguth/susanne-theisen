@@ -1,3 +1,3 @@
 source "http://rubygems.org"
 
-gem "middleman", "~>2.0.13"
+gem "middleman", "~>3.0.0"
